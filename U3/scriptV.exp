@@ -1,0 +1,20 @@
+#!/usr/bin/expect -f
+#run this after running docker image
+
+set timeout -1
+
+spawn nc 127.0.0.1 4444
+
+expect "Task_ID (max. 3 chars):"
+send -- "3AV"
+send -- \r
+
+expect "Student_ID (max. 7 chars):"
+send -- "1238240"
+send -- \r
+
+expect "Student_ID (30 chars):"
+send -- "+,235#.8-)019\"/:$;(4%<7>6=&'*!"
+send -- \r
+
+expect eof

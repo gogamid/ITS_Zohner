@@ -1,0 +1,14 @@
+#!/usr/bin/expect -f
+set timeout -1
+
+spawn nc 127.0.0.1 4444
+
+expect "Task_ID (max. 3 chars):"
+send -- "3A"
+send -- \r
+
+expect "Student_ID (max. 7 chars):"
+send -- "1238240"
+send -- \r
+
+expect eof
