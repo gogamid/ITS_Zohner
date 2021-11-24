@@ -1,6 +1,6 @@
 
-import multiprocessing as mp
-
+import threading
+l = []
   
 def div(start, end, N):
     for i in range(start, end+1):
@@ -10,24 +10,27 @@ def div(start, end, N):
   
   
 if __name__ == "__main__":
-    N = 10000000000
-    b = 625000000
-
-    data = []
+    N = 1433234323232
+    b = 43322323434
     
     
-    
+    threads = []
     for i in range(1, N, b):
         st = i
         end = i+b-1
-        t = (st, end, N)
-        data.append(t)
+        if end > N:
+            end = N
         print (str(st) + "-" + str(end))
-    
+        t = threading.Thread(target=div, args=(st , end, N))
+        threads.append(t)
 
-    process_pool = mp.Pool(mp.cpu_count())
-    output = process_pool.starmap(div, data)
+    for i in threads:
+        i.start()
+
+    for i in threads:
+        i.join()
+  
 
   
-    print(data)
+
     print("Done!")
