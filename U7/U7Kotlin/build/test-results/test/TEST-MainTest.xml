@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MainTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-12-29T13:37:02" hostname="759756ff-cc62-42db-9aac-ff39803145dc.fritz.box" time="0.057">
+  <properties/>
+  <testcase name="test_toSHA256_byteArray()" classname="MainTest" time="0.057"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
