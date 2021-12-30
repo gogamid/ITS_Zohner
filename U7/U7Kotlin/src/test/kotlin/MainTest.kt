@@ -5,8 +5,8 @@ import kotlin.test.assertEquals
 
 internal class MainTest {
     private val testMain: Main = Main()
-    private val wordsInFile = 137464
-    private val fileName = "Wortliste_Deutsch.txt"
+    private val wordsInFile = 137464*2
+    private val fileName = "src/main/resources/wordsAfterA.txt"
 
     val passString = "aBg0schn/ertem10"
     val passHex = "614267307363686e2f657274656d3130"
@@ -24,16 +24,6 @@ internal class MainTest {
             passString.toHex()
         }
         assertEquals(str, passHex)
-    }
-
-    @Test
-    fun test_hexToHashHex() {
-        assertEquals(hash, testMain.hexToHashHex(passNSalt), "Function hexToHashHex is  calculating hash incorrectly")
-    }
-
-    @Test
-    fun test_hexToString(){
-        assertEquals(passString, testMain.hexToString(passHex), "hex to string not correct")
     }
 
     @Test
@@ -61,9 +51,4 @@ internal class MainTest {
 
         assertEquals(hash, str)
     }
-
-
-
-
-
 }
